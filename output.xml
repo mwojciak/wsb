@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20160517 12:27:24.563" generator="Robot 3.0 (Python 3.4.3 on darwin)">
+<suite id="s1" name="Test" source="/Users/maya/PycharmProjects/robot/test">
+<suite id="s1-s1" name="Valid Login" source="/Users/maya/PycharmProjects/robot/test/valid_login.robot">
+<test id="s1-s1-t1" name="Login Should Succeed When No Username Is Given">
+<kw name="Enter Username" library="resource">
+<arguments>
+<arg>${empty}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>uname</arg>
+<arg>${username}</arg>
+</arguments>
+<msg level="INFO" timestamp="20160517 12:27:25.757">Typing text '' into text field 'uname'</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg level="FAIL" timestamp="20160517 12:27:25.783">No browser is open</msg>
+<status status="FAIL" starttime="20160517 12:27:25.757" endtime="20160517 12:27:25.783"></status>
+</kw>
+<msg level="WARN" timestamp="20160517 12:27:25.784">Keyword 'Capture Page Screenshot' could not be run on failure: No browser is open</msg>
+<msg level="FAIL" timestamp="20160517 12:27:25.821">No browser is open</msg>
+<status status="FAIL" starttime="20160517 12:27:25.757" endtime="20160517 12:27:25.821"></status>
+</kw>
+<status status="FAIL" starttime="20160517 12:27:25.756" endtime="20160517 12:27:25.822"></status>
+</kw>
+<tags>
+<tag>FunctionalTest</tag>
+<tag>InvalidTest</tag>
+</tags>
+<status status="FAIL" starttime="20160517 12:27:25.755" critical="yes" endtime="20160517 12:27:25.823">No browser is open</status>
+</test>
+<test id="s1-s1-t2" name="Login Should Succeed When the Correct Username and Password are Entered">
+<kw name="Enter Username" library="resource">
+<arguments>
+<arg>AUser</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>uname</arg>
+<arg>${username}</arg>
+</arguments>
+<msg level="INFO" timestamp="20160517 12:27:25.828">Typing text 'AUser' into text field 'uname'</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg level="FAIL" timestamp="20160517 12:27:25.830">No browser is open</msg>
+<status status="FAIL" starttime="20160517 12:27:25.828" endtime="20160517 12:27:25.830"></status>
+</kw>
+<msg level="WARN" timestamp="20160517 12:27:25.830">Keyword 'Capture Page Screenshot' could not be run on failure: No browser is open</msg>
+<msg level="FAIL" timestamp="20160517 12:27:25.830">No browser is open</msg>
+<status status="FAIL" starttime="20160517 12:27:25.827" endtime="20160517 12:27:25.830"></status>
+</kw>
+<status status="FAIL" starttime="20160517 12:27:25.827" endtime="20160517 12:27:25.831"></status>
+</kw>
+<tags>
+<tag>FunctionalTest</tag>
+<tag>ValidTest</tag>
+</tags>
+<status status="FAIL" starttime="20160517 12:27:25.825" critical="yes" endtime="20160517 12:27:25.831">No browser is open</status>
+</test>
+<status status="FAIL" starttime="20160517 12:27:24.689" endtime="20160517 12:27:25.832"></status>
+</suite>
+<status status="FAIL" starttime="20160517 12:27:24.565" endtime="20160517 12:27:25.833"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="2" pass="0">Critical Tests</stat>
+<stat fail="2" pass="0">All Tests</stat>
+</total>
+<tag>
+<stat fail="2" pass="0">FunctionalTest</stat>
+<stat fail="1" pass="0">InvalidTest</stat>
+<stat fail="1" pass="0">ValidTest</stat>
+</tag>
+<suite>
+<stat fail="2" id="s1" pass="0" name="Test">Test</stat>
+<stat fail="2" id="s1-s1" pass="0" name="Valid Login">Test.Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg level="WARN" timestamp="20160517 12:27:24.691">Error in file '/Users/maya/PycharmProjects/robot/test/valid_login.robot': Importing library with extra spaces in name like 'Selenium Library' is deprecated. Remove spaces and use 'SeleniumLibrary' instead.</msg>
+<msg level="ERROR" timestamp="20160517 12:27:24.692">Error in file '/Users/maya/PycharmProjects/robot/test/valid_login.robot': Importing test library 'SeleniumLibrary' failed: ImportError: No module named 'SeleniumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /opt/local/Library/Frameworks/Python.framework/Versions/3.4/bin
+  /opt/local/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/robotframework_selenium2library-1.8.0b2-py3.4.egg
+  /opt/local/Library/Frameworks/Python.framework/Versions/3.4/lib/python34.zip
+  /opt/local/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4
+  /opt/local/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/plat-darwin
+  /opt/local/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/lib-dynload
+  /opt/local/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages</msg>
+<msg level="WARN" timestamp="20160517 12:27:25.784">Keyword 'Capture Page Screenshot' could not be run on failure: No browser is open</msg>
+<msg level="WARN" timestamp="20160517 12:27:25.830">Keyword 'Capture Page Screenshot' could not be run on failure: No browser is open</msg>
+</errors>
+</robot>

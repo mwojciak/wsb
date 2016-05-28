@@ -1,98 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20160517 12:27:24.563" generator="Robot 3.0 (Python 3.4.3 on darwin)">
-<suite id="s1" name="Test" source="/Users/maya/PycharmProjects/robot/test">
-<suite id="s1-s1" name="Valid Login" source="/Users/maya/PycharmProjects/robot/test/valid_login.robot">
-<test id="s1-s1-t1" name="Login Should Succeed When No Username Is Given">
-<kw name="Enter Username" library="resource">
+<robot generated="20160527 16:09:14.569" generator="Robot 3.0 (Python 3.4.3 on darwin)">
+<suite source="/Users/maya/PycharmProjects/robot/test" name="Test" id="s1">
+<suite source="/Users/maya/PycharmProjects/robot/test/scenarios.robot" name="Scenarios" id="s1-s1">
+<test name="Open website" id="s1-s1-t1">
+<kw name="Given open website wsb.gda.pl">
+<kw library="Selenium2Library" name="Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
 <arguments>
-<arg>${empty}</arg>
+<arg>${website_address}</arg>
+<arg>${BROWSER}</arg>
 </arguments>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20160527 16:09:15.727" level="INFO">Opening browser 'firefox' to base url 'http://www.wsb.pl/gdansk/'</msg>
+<status status="PASS" starttime="20160527 16:09:15.727" endtime="20160527 16:09:22.699"></status>
+</kw>
+<kw library="Selenium2Library" name="Maximize Browser Window">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20160527 16:09:22.700" endtime="20160527 16:09:23.340"></status>
+</kw>
+<kw library="Selenium2Library" name="Set Selenium Speed">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
 <arguments>
-<arg>uname</arg>
-<arg>${username}</arg>
+<arg>${DELAY}</arg>
 </arguments>
-<msg level="INFO" timestamp="20160517 12:27:25.757">Typing text '' into text field 'uname'</msg>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg level="FAIL" timestamp="20160517 12:27:25.783">No browser is open</msg>
-<status status="FAIL" starttime="20160517 12:27:25.757" endtime="20160517 12:27:25.783"></status>
+<status status="PASS" starttime="20160527 16:09:23.340" endtime="20160527 16:09:23.341"></status>
 </kw>
-<msg level="WARN" timestamp="20160517 12:27:25.784">Keyword 'Capture Page Screenshot' could not be run on failure: No browser is open</msg>
-<msg level="FAIL" timestamp="20160517 12:27:25.821">No browser is open</msg>
-<status status="FAIL" starttime="20160517 12:27:25.757" endtime="20160517 12:27:25.821"></status>
+<status status="PASS" starttime="20160527 16:09:15.726" endtime="20160527 16:09:23.341"></status>
 </kw>
-<status status="FAIL" starttime="20160517 12:27:25.756" endtime="20160517 12:27:25.822"></status>
+<kw name="When open website">
+<kw library="Selenium2Library" name="Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Studia Gdańsk | Uczelnia wyższa | Studia stacjonarne i niestacjonarne | Wyższa Szkoła Bankowa w Gdańsku</arg>
+</arguments>
+<msg timestamp="20160527 16:09:23.358" level="INFO">Page title is 'Studia Gdańsk | Uczelnia wyższa | Studia stacjonarne i niestacjonarne | Wyższa Szkoła Bankowa w Gdańsku'.</msg>
+<status status="PASS" starttime="20160527 16:09:23.343" endtime="20160527 16:09:23.359"></status>
 </kw>
-<tags>
-<tag>FunctionalTest</tag>
-<tag>InvalidTest</tag>
-</tags>
-<status status="FAIL" starttime="20160517 12:27:25.755" critical="yes" endtime="20160517 12:27:25.823">No browser is open</status>
+<status status="PASS" starttime="20160527 16:09:23.342" endtime="20160527 16:09:23.359"></status>
+</kw>
+<kw name="Then website wsb.gda.pl should be active">
+<kw library="Selenium2Library" name="Location Should Be">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${website_address}</arg>
+</arguments>
+<msg timestamp="20160527 16:09:23.374" level="INFO">Current location is 'http://www.wsb.pl/gdansk/'.</msg>
+<status status="PASS" starttime="20160527 16:09:23.361" endtime="20160527 16:09:23.375"></status>
+</kw>
+<status status="PASS" starttime="20160527 16:09:23.360" endtime="20160527 16:09:23.375"></status>
+</kw>
+<status status="PASS" starttime="20160527 16:09:15.725" critical="yes" endtime="20160527 16:09:23.375"></status>
 </test>
-<test id="s1-s1-t2" name="Login Should Succeed When the Correct Username and Password are Entered">
-<kw name="Enter Username" library="resource">
+<test name="Change languages to English" id="s1-s1-t2">
+<kw name="Given choice english language">
+<kw library="Selenium2Library" name="Log Location">
+<doc>Logs and returns the current location.</doc>
+<msg timestamp="20160527 16:09:23.397" level="INFO">http://www.wsb.pl/gdansk/</msg>
+<status status="PASS" starttime="20160527 16:09:23.380" endtime="20160527 16:09:23.398"></status>
+</kw>
+<status status="PASS" starttime="20160527 16:09:23.379" endtime="20160527 16:09:23.398"></status>
+</kw>
+<kw name="When click EN button">
+<kw library="Selenium2Library" name="Click Element">
+<doc>Click element identified by `locator`.</doc>
 <arguments>
-<arg>AUser</arg>
+<arg>link=EN</arg>
 </arguments>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20160527 16:09:23.399" level="INFO">Clicking element 'link=EN'.</msg>
+<status status="PASS" starttime="20160527 16:09:23.399" endtime="20160527 16:09:23.979"></status>
+</kw>
+<status status="PASS" starttime="20160527 16:09:23.398" endtime="20160527 16:09:23.979"></status>
+</kw>
+<kw name="Then changing the language to English">
+<kw library="Selenium2Library" name="Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
 <arguments>
-<arg>uname</arg>
-<arg>${username}</arg>
+<arg>WSB Universities in Poland</arg>
 </arguments>
-<msg level="INFO" timestamp="20160517 12:27:25.828">Typing text 'AUser' into text field 'uname'</msg>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg level="FAIL" timestamp="20160517 12:27:25.830">No browser is open</msg>
-<status status="FAIL" starttime="20160517 12:27:25.828" endtime="20160517 12:27:25.830"></status>
+<msg timestamp="20160527 16:09:25.495" level="INFO">Page title is 'WSB Universities in Poland'.</msg>
+<status status="PASS" starttime="20160527 16:09:23.980" endtime="20160527 16:09:25.496"></status>
 </kw>
-<msg level="WARN" timestamp="20160517 12:27:25.830">Keyword 'Capture Page Screenshot' could not be run on failure: No browser is open</msg>
-<msg level="FAIL" timestamp="20160517 12:27:25.830">No browser is open</msg>
-<status status="FAIL" starttime="20160517 12:27:25.827" endtime="20160517 12:27:25.830"></status>
+<status status="PASS" starttime="20160527 16:09:23.980" endtime="20160527 16:09:25.496"></status>
 </kw>
-<status status="FAIL" starttime="20160517 12:27:25.827" endtime="20160517 12:27:25.831"></status>
-</kw>
-<tags>
-<tag>FunctionalTest</tag>
-<tag>ValidTest</tag>
-</tags>
-<status status="FAIL" starttime="20160517 12:27:25.825" critical="yes" endtime="20160517 12:27:25.831">No browser is open</status>
+<status status="PASS" starttime="20160527 16:09:23.377" critical="yes" endtime="20160527 16:09:25.497"></status>
 </test>
-<status status="FAIL" starttime="20160517 12:27:24.689" endtime="20160517 12:27:25.832"></status>
+<test name="Change languages to Russian" id="s1-s1-t3">
+<kw name="Given choice russian language">
+<kw library="Selenium2Library" name="Log Location">
+<doc>Logs and returns the current location.</doc>
+<msg timestamp="20160527 16:09:25.521" level="INFO">http://www.wsb.pl/english/</msg>
+<status status="PASS" starttime="20160527 16:09:25.499" endtime="20160527 16:09:25.522"></status>
+</kw>
+<status status="PASS" starttime="20160527 16:09:25.499" endtime="20160527 16:09:25.522"></status>
+</kw>
+<kw name="When click RU button">
+<kw library="Selenium2Library" name="Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>link=RU</arg>
+</arguments>
+<msg timestamp="20160527 16:09:25.524" level="INFO">Clicking element 'link=RU'.</msg>
+<status status="PASS" starttime="20160527 16:09:25.523" endtime="20160527 16:09:25.777"></status>
+</kw>
+<status status="PASS" starttime="20160527 16:09:25.523" endtime="20160527 16:09:25.777"></status>
+</kw>
+<kw name="Then changing the language to Russian">
+<kw library="Selenium2Library" name="Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Университеты ВСБ</arg>
+</arguments>
+<msg timestamp="20160527 16:09:29.109" level="INFO">Page title is 'Университеты ВСБ'.</msg>
+<status status="PASS" starttime="20160527 16:09:25.778" endtime="20160527 16:09:29.110"></status>
+</kw>
+<status status="PASS" starttime="20160527 16:09:25.778" endtime="20160527 16:09:29.110"></status>
+</kw>
+<status status="PASS" starttime="20160527 16:09:25.498" critical="yes" endtime="20160527 16:09:29.111"></status>
+</test>
+<test name="Change languages to Ukrainian" id="s1-s1-t4">
+<kw name="Given choice ukrainian language">
+<kw library="Selenium2Library" name="Log Location">
+<doc>Logs and returns the current location.</doc>
+<msg timestamp="20160527 16:09:29.133" level="INFO">http://www.wsb.pl/russian/</msg>
+<status status="PASS" starttime="20160527 16:09:29.115" endtime="20160527 16:09:29.134"></status>
+</kw>
+<status status="PASS" starttime="20160527 16:09:29.114" endtime="20160527 16:09:29.134"></status>
+</kw>
+<kw name="When click UA button">
+<kw library="Selenium2Library" name="Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>link=UA</arg>
+</arguments>
+<msg timestamp="20160527 16:09:29.138" level="INFO">Clicking element 'link=UA'.</msg>
+<status status="PASS" starttime="20160527 16:09:29.137" endtime="20160527 16:09:29.473"></status>
+</kw>
+<status status="PASS" starttime="20160527 16:09:29.136" endtime="20160527 16:09:29.473"></status>
+</kw>
+<kw name="Then changing the language to Ukrainian">
+<kw library="Selenium2Library" name="Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Университеты ВСБ</arg>
+</arguments>
+<msg timestamp="20160527 16:09:30.903" level="INFO">Page title is 'Университеты ВСБ'.</msg>
+<status status="PASS" starttime="20160527 16:09:29.474" endtime="20160527 16:09:30.904"></status>
+</kw>
+<status status="PASS" starttime="20160527 16:09:29.474" endtime="20160527 16:09:30.904"></status>
+</kw>
+<status status="PASS" starttime="20160527 16:09:29.112" critical="yes" endtime="20160527 16:09:30.904"></status>
+</test>
+<test name="Return do polish version" id="s1-s1-t5">
+<kw name="Given return to polish website">
+<kw library="Selenium2Library" name="Log Location">
+<doc>Logs and returns the current location.</doc>
+<msg timestamp="20160527 16:09:30.920" level="INFO">http://www.wsb.pl/ukrainian/</msg>
+<status status="PASS" starttime="20160527 16:09:30.906" endtime="20160527 16:09:30.920"></status>
+</kw>
+<status status="PASS" starttime="20160527 16:09:30.906" endtime="20160527 16:09:30.920"></status>
+</kw>
+<kw name="When click PL button">
+<kw library="Selenium2Library" name="Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>link=PL</arg>
+</arguments>
+<msg timestamp="20160527 16:09:30.921" level="INFO">Clicking element 'link=PL'.</msg>
+<status status="PASS" starttime="20160527 16:09:30.921" endtime="20160527 16:09:31.227"></status>
+</kw>
+<status status="PASS" starttime="20160527 16:09:30.920" endtime="20160527 16:09:31.228"></status>
+</kw>
+<kw name="Then return to polish version">
+<kw library="Selenium2Library" name="Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Uczelnie wyższe | Studia I, II stopnia i podyplomowe | Stacjonarne i niestacjonarne | Wyższe Szkoły Bankowe</arg>
+</arguments>
+<msg timestamp="20160527 16:09:33.673" level="INFO">Page title is 'Uczelnie wyższe | Studia I, II stopnia i podyplomowe | Stacjonarne i niestacjonarne | Wyższe Szkoły Bankowe'.</msg>
+<status status="PASS" starttime="20160527 16:09:31.229" endtime="20160527 16:09:33.673"></status>
+</kw>
+<status status="PASS" starttime="20160527 16:09:31.228" endtime="20160527 16:09:33.674"></status>
+</kw>
+<status status="PASS" starttime="20160527 16:09:30.905" critical="yes" endtime="20160527 16:09:33.674"></status>
+</test>
+<doc>Scenarios for tests website wsb.gda.pl</doc>
+<status status="PASS" starttime="20160527 16:09:14.693" endtime="20160527 16:09:33.676"></status>
 </suite>
-<status status="FAIL" starttime="20160517 12:27:24.565" endtime="20160517 12:27:25.833"></status>
+<status status="PASS" starttime="20160527 16:09:14.571" endtime="20160527 16:09:33.686"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="2" pass="0">Critical Tests</stat>
-<stat fail="2" pass="0">All Tests</stat>
+<stat fail="0" pass="5">Critical Tests</stat>
+<stat fail="0" pass="5">All Tests</stat>
 </total>
 <tag>
-<stat fail="2" pass="0">FunctionalTest</stat>
-<stat fail="1" pass="0">InvalidTest</stat>
-<stat fail="1" pass="0">ValidTest</stat>
 </tag>
 <suite>
-<stat fail="2" id="s1" pass="0" name="Test">Test</stat>
-<stat fail="2" id="s1-s1" pass="0" name="Valid Login">Test.Valid Login</stat>
+<stat fail="0" pass="5" name="Test" id="s1">Test</stat>
+<stat fail="0" pass="5" name="Scenarios" id="s1-s1">Test.Scenarios</stat>
 </suite>
 </statistics>
 <errors>
-<msg level="WARN" timestamp="20160517 12:27:24.691">Error in file '/Users/maya/PycharmProjects/robot/test/valid_login.robot': Importing library with extra spaces in name like 'Selenium Library' is deprecated. Remove spaces and use 'SeleniumLibrary' instead.</msg>
-<msg level="ERROR" timestamp="20160517 12:27:24.692">Error in file '/Users/maya/PycharmProjects/robot/test/valid_login.robot': Importing test library 'SeleniumLibrary' failed: ImportError: No module named 'SeleniumLibrary'
-Traceback (most recent call last):
-  None
-PYTHONPATH:
-  /opt/local/Library/Frameworks/Python.framework/Versions/3.4/bin
-  /opt/local/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/robotframework_selenium2library-1.8.0b2-py3.4.egg
-  /opt/local/Library/Frameworks/Python.framework/Versions/3.4/lib/python34.zip
-  /opt/local/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4
-  /opt/local/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/plat-darwin
-  /opt/local/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/lib-dynload
-  /opt/local/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages</msg>
-<msg level="WARN" timestamp="20160517 12:27:25.784">Keyword 'Capture Page Screenshot' could not be run on failure: No browser is open</msg>
-<msg level="WARN" timestamp="20160517 12:27:25.830">Keyword 'Capture Page Screenshot' could not be run on failure: No browser is open</msg>
 </errors>
 </robot>

@@ -9,29 +9,12 @@ Library        Selenium2Library
 
 *** Variables ***
 
-${login address}=  http://zdiles.chaosnet.org/
+${website address}  http://www.wsb.pl/gdansk/
 ${BROWSER}       firefox
-${DELAY}         0
-${VALID USER}    test
-${VALID PASSWORD}  test1
+${DELAY}   0
+${website_address_EN}   http://www.wsb.pl/english/
+${website_address_RU}   http://www.wsb.pl/russian/
 
 
-*** Keywords ***
-Enter Username  [Arguments]  ${username}
-  Input Text  uname  ${username}
 
-Enter Password  [Arguments]  ${password}
-  Input Text  pwd  ${password}
 
-Click the Login Button
-  Click Button  login
-
-Login Is Successful
-  Page Should Contain  Welcome
-
-Login is Unsuccessful
-  Run Keyword And Expect Error  *  Login Is Successful
-
-Login Test Setup
-  Open Browser  ${login address}  ${browser}
-  Maximize Browser Window

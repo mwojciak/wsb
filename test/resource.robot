@@ -9,11 +9,12 @@ Library        Selenium2Library
 
 *** Variables ***
 
-${website address}  http://www.wsb.pl/gdansk/
+${website address}  http://www.wsb.pl/
 ${BROWSER}       firefox
 ${DELAY}   0
 ${website_address_EN}   http://www.wsb.pl/english/
 ${website_address_RU}   http://www.wsb.pl/russian/
+${fraza}   kierunki
 
 
 

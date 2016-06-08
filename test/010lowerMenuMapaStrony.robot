@@ -1,13 +1,15 @@
 *** Settings ***
-Documentation    Suite description
+Documentation  Test checks footer menu
+Resource  resource.robot
+
 
 *** Test Cases ***
-Test title
-    [Tags]    DEBUG
-    Provided precondition
-    When action
-    Then check expectations
-
-*** Keywords ***
-Provided precondition
-    Setup system under test
+Lower Menu Test
+    [Documentation]  checking Mapa Strony in footer menu
+    [Tags]  Smoke
+    Open Browser  ${website_address_gdansk}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed  ${DELAY}
+    Click Element  xpath=//*[@id="block-menu-menu-stopka"]/div/ul/li[7]/a
+    Page Should Contain  Mapa strony
+    Close Browser

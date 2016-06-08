@@ -10,6 +10,7 @@ Library        Selenium2Library
 *** Variables ***
 
 ${website_address}  http://www.wsb.pl/
+${website_address_gdansk}  http://www.wsb.pl/gdansk/
 ${BROWSER}  firefox
 ${OS}  Windows
 ${DELAY}  0

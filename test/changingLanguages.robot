@@ -1,6 +1,7 @@
 *** Settings ***
-Documentation  Scenarios for tests website wsb.gda.pl
+Documentation  Scenarios for changing language option at website wsb.gda.pl
 Resource  resource.robot
+#Test Teardown  close browser
 
 *** Test Cases ***
 Open website
@@ -27,24 +28,19 @@ Return do polish version
     Given return to polish website
     When click PL button
     Then return to polish version
-
-Select city
-    Given select city from list
-    When I click the dropdown
-    Then I see list of the cities
-    And I select city from list
-    And I see website for this city
+    And close browser
 
 
 *** Keywords ***
+
 Open website wsb.gda.pl
-    Open Browser    ${website_address}    ${BROWSER}
-    Maximize Browser Window
-    Set Selenium Speed    ${DELAY}
+    On The Website
+
 Opened website
     Title Should Be   Studia Gdańsk | Uczelnia wyższa | Studia stacjonarne i niestacjonarne | Wyższa Szkoła Bankowa w Gdańsku
+
 Website wsb.gda.pl should be active
-    Location Should Be   ${website_address}
+    Location Should Be  ${website_address}
 
 Choice english language
     Log Location
@@ -82,4 +78,5 @@ Click PL button
 Return to polish version
     Title Should Be   Uczelnie wyższe | Studia I, II stopnia i podyplomowe | Stacjonarne i niestacjonarne | Wyższe Szkoły Bankowe
 
-
+Close Browser
+    Close Browser

@@ -11,7 +11,8 @@ Library        Selenium2Library
 
 ${website_address}  http://www.wsb.pl/
 ${BROWSER}  firefox
-${DELAY}  0.7
+${OS}  Windows
+${DELAY}  0
 ${website_address_EN}  http://www.wsb.pl/english/
 ${website_address_RU}  http://www.wsb.pl/russian/
 ${fraza}  kierunki
@@ -27,17 +28,17 @@ ${upper_menu_element_child}  xpath=//*[@id="block-menu-menu-kandydaci"]/div/ul/l
 ${side_menu_element_parent}  xpath=//*[@id="contactSlider"]/h2
 ${side_menu_element_child}  xpath=.//*[@id='contactSlider']/ul[1]/li[2]/a
 ${city}   /gdansk
-
+${RemoteUrl}   http://maya113:R1RVsqmmoxje1wGWunZv@hub.browserstack.com:80/wd/hub
 
 *** Keywords ***
 
 On The Website
-    Open Browser  ${website_address}  ${BROWSER}
+    Open Browser  ${website_address}  ${BROWSER}   remote_url=${RemoteURL}   desired_capabilities=browser:${BROWSER},os:${OS},browserstack.debug:true
     Maximize Browser Window
     Set Selenium Speed  ${DELAY}
 
 Logged to Extranet
-    Open Browser  ${website address}  ${BROWSER}
+    Open Browser  ${website address}  ${BROWSER}   remote_url=${RemoteURL}   desired_capabilities=browser:${BROWSER},os:${OS},browserstack.debug:true
     Maximize Browser Window
     Click Link  ${loging_to_ExNet}
     Input Text  ${login_input}  ${valid_pt_user}

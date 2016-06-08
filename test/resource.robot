@@ -26,6 +26,7 @@ ${upper_menu_element_parent}  xpath=//*[@id="block-menu-menu-kandydaci"]/h2
 ${upper_menu_element_child}  xpath=//*[@id="block-menu-menu-kandydaci"]/div/ul/li[3]/a
 ${side_menu_element_parent}  xpath=//*[@id="contactSlider"]/h2
 ${side_menu_element_child}  xpath=.//*[@id='contactSlider']/ul[1]/li[2]/a
+${city}   /gdansk
 
 
 *** Keywords ***

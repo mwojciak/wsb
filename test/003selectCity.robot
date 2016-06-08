@@ -19,7 +19,7 @@ I click the dropdown
     Click Element   ID=miasto-wsb
 
 I select city from list
-    Click Element   xpath=//div[@id('miasto-wsb')] /x:option[4]
+    Select From List By Value  id=miasto-wsb   ${city}
 
 I see website for this city
     Title Should Be   Studia Gdańsk | Uczelnia wyższa | Studia stacjonarne i niestacjonarne | Wyższa Szkoła Bankowa w Gdańsku

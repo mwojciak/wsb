@@ -6,7 +6,7 @@ Resource  resource.robot
 Keyword search
     Given searching some keyword
     When I click 'Formularz wyszukiwania'
-    And I write some kewyword
+    And I write some keyword
     And I click enter
     Then I see searching result for this keyword
     And close this browser
@@ -25,7 +25,7 @@ I click enter
     Press Key   id=edit-submit   key=\\13
 
 I see searching result for this keyword
-    Element Text Should Be   css=#block-system-main .content h3   expected=Szukana fraza: ${fraza}
+   Element Text Should Be   css=#block-system-main .content h3   expected=Szukana fraza: ${fraza}
 
 Close this browser
     Close Browser

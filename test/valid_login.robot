@@ -12,4 +12,4 @@ User can create an account and log in
     Create Valid User    maja    P4ssw0rd
     Attempt to Login with Credentials    maja    P4ssw0rd
     Status Should Be    Logged In
-    [Teardown]  Close Browser
+    Close Browser

@@ -11,7 +11,7 @@ Library        Selenium2Library
 
 ${website_address}  http://www.wsb.pl/
 ${BROWSER}  firefox
-${DELAY}  0
+${DELAY}  0.7
 ${website_address_EN}  http://www.wsb.pl/english/
 ${website_address_RU}  http://www.wsb.pl/russian/
 ${fraza}  kierunki

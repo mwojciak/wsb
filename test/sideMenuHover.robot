@@ -11,3 +11,4 @@ Redirecting to Contact form via Side Menu
     Focus  xpath=.//*[@id='contactSlider']
     Click Element  ${side_menu_element_child}
     Page Should Contain  Rekrutacja online
+    Close Browser

@@ -17,4 +17,5 @@ User logs in to Extranet
     Page Should Contain  EXTRANET
     #loging out
     Click Element  xpath=//*[@id="_145_userAvatar"]/span/span/a
+    Close Browser
 

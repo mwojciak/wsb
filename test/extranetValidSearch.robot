@@ -11,3 +11,4 @@ Valid Search
     Input Text  ${search_box_input}  wsb
     Click Element  //*[@id="search-action"]
     Element Should Contain  ${search_result}  wsb
+    Close Browser

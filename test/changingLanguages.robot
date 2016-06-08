@@ -1,11 +1,10 @@
 *** Settings ***
-Documentation  Scenarios for changing language option at website wsb.gda.pl
+Documentation  Scenarios for changing language option at website wsb.pl
 Resource  resource.robot
-#Test Teardown  close browser
 
 *** Test Cases ***
 Open website
-    Given open website wsb.gda.pl
+    Given open website wsb.pl
     When opened website
     Then website wsb.gda.pl should be active
 
@@ -28,16 +27,21 @@ Return do polish version
     Given return to polish website
     When click PL button
     Then return to polish version
-    And close browser
+
+Close cookies information
+    Given see cookies information
+    When I click 'Zamknij'
+    Then information about cookies is closed
+    And close this browser
 
 
 *** Keywords ***
 
-Open website wsb.gda.pl
+Open website wsb.pl
     On The Website
 
 Opened website
-    Title Should Be   Studia Gdańsk | Uczelnia wyższa | Studia stacjonarne i niestacjonarne | Wyższa Szkoła Bankowa w Gdańsku
+    Title Should Be   Uczelnie wyższe | Studia I, II stopnia i podyplomowe | Stacjonarne i niestacjonarne | Wyższe Szkoły Bankowe
 
 Website wsb.gda.pl should be active
     Location Should Be  ${website_address}
@@ -78,5 +82,14 @@ Click PL button
 Return to polish version
     Title Should Be   Uczelnie wyższe | Studia I, II stopnia i podyplomowe | Stacjonarne i niestacjonarne | Wyższe Szkoły Bankowe
 
-Close Browser
+Close this browser
     Close Browser
+
+See cookies information
+    Log Location
+
+I click 'Zamknij'
+    Click Element  id=accept
+
+Information about cookies is closed
+    Log Location

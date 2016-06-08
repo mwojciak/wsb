@@ -11,3 +11,4 @@ Invalid Search
     Input Text  ${search_box_input}  q2w3e4r5
     Click Element  xpath=//*[@id="search-action"]
     Element Should Contain  ${search_result}  Nie znaleziono wyników zawierających słowa kluczowe: q2w3e4r5.
+    Close Browser

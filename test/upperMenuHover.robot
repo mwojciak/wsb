@@ -12,3 +12,4 @@ Choosing AKTUALNOŚCI from KANDYDACI menu
     Mouse Over  ${upper_menu_element_parent}
     Click Element  ${upper_menu_element_child}
     Page Should Contain  Aktualności
+    Close Browser

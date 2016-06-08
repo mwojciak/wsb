@@ -3,12 +3,12 @@ Documentation  This is a part of smoke test suite
 ...            covering basic functionality
 Resource  resource.robot
 Test Teardown  close browser
+Test Setup  On The Website
 
 *** Test Cases ***
 User logs in to Extranet
     [Documentation]  Test checks loging with valid user to the Extranet
     [Tags]  Smoke
-    Open Browser  ${website_address}  ${BROWSER}
     Maximize Browser Window
     Click Link  ${loging_to_ExNet}
     Input Text  ${login_input}  ${valid_pt_user}

@@ -13,7 +13,7 @@ ${website_address}  http://www.wsb.pl/
 ${website_address_gdansk}  http://www.wsb.pl/gdansk/
 ${BROWSER}  firefox
 ${OS}  Windows
-${DELAY}  0
+${DELAY}  0.7
 ${website_address_EN}  http://www.wsb.pl/english/
 ${website_address_RU}  http://www.wsb.pl/russian/
 ${fraza}  kierunki
@@ -35,6 +35,11 @@ ${RemoteUrl}   http://maya113:R1RVsqmmoxje1wGWunZv@hub.browserstack.com:80/wd
 
 On The Website
     Open Browser  ${website_address}  ${BROWSER}   remote_url=${RemoteURL}   desired_capabilities=browser:${BROWSER},os:${OS},browserstack.debug:true
+    Maximize Browser Window
+    Set Selenium Speed  ${DELAY}
+
+On The Website Gdansk
+    Open Browser  ${website_address_gdansk}  ${BROWSER}   remote_url=${RemoteURL}   desired_capabilities=browser:${BROWSER},os:${OS},browserstack.debug:true
     Maximize Browser Window
     Set Selenium Speed  ${DELAY}
 

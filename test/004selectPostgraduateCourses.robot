@@ -17,19 +17,19 @@ See postgraduate courses
     On The Website
 
 I click "Studia podyplomowe"
-    Click Element   css=#block-menu-menu-wybierz-studia-w-wsb a[href="/poznan/kandydaci/studia-podyplomowe"]
+    Click Element   css=#block-menu-menu-wybierz-studia-w-wsb a[href="/kandydaci/studia-podyplomowe"]
 
 I click "Kierunki"
     Click Element   link=Kierunki
 
 I see webpage about postgraduate courses
-    Title Should Be   Kierunki studiów Poznań - znajdź Studia podyplomowe na WSB | Poznań - WSB.pl
+    Title Should Be   Znajdź studia podyplomowe na WSB | Wyższe Szkoły Bankowe | WSB.pl
 
 I can choice some course
     Click Element   link=Surdopedagogika
 
 I see webpage about this course
-    Element Text Should Be      Surdopedagogika
+    Element Text Should Be  css=.kierunek-header > h2  Surdopedagogika
 
 Close this browser
     Close Browser
